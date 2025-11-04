@@ -6,7 +6,7 @@ import uuid
 
 @shared_task
 def generate_mockup(text, font="arial", text_color="#000000", shirt_colors=None):
-    tshirt_colors = shirt_colors or ["white", "black", "red"]
+    tshirt_colors =shirt_colors or ["white", "black", "blue", "yellow"]
     base_dir = "media/tshirts"
     output_dir = "media/mockups"
     os.makedirs(output_dir, exist_ok=True)
@@ -45,7 +45,7 @@ def generate_mockup(text, font="arial", text_color="#000000", shirt_colors=None)
             font="arial",
             text_color="#000000",
             shirt_color=color,
-            image=f"/mockups/{filename}"
+            image=f"media/mockups/{filename}"
         )
 
         results.append({
@@ -68,7 +68,7 @@ def generate_mockup(text, font="arial", text_color="#000000", shirt_colors=None)
 # @shared_task
 # def generate_mockup(text, font='arial', text_color='#000000', shirt_colors=None):
 #     if shirt_colors is None:
-#         shirt_colors = ['white', 'black', 'blue', 'red']
+#         shirt_colors = ['white', 'black', 'blue', 'yellow']
 
 #     results = []
 #     base_path = os.path.join(settings.MEDIA_ROOT, 'mockups')
