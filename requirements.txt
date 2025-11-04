@@ -3,3 +3,4 @@ djangorestframework
 Pillow
 celery
 redis
+django-redis
